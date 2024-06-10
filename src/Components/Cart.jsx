@@ -5,7 +5,23 @@ import {v4 as uuid} from 'uuid'
 import Footer from "./Footer"
 
 const Cart = () => {
-    const {cart, cartTotal} = useContext(Context);
+    const {cart, setCart, cartTotal, setCartTotal} = useContext(Context);
+
+    const removeFromCart = (src) => {
+        const newCart = [];
+        if(cart.length > 0){
+            for(let i = 0; i < cart.length; i++){
+                if(cart[i].src !== src){
+                    newCart.push(cart[i]);
+                }
+                else{
+                    const newTotal = (cartTotal - (cart[i].quantity * cart[i].price)).toFixed(2);
+                    setCartTotal(newTotal);
+                }
+            }
+            setCart(newCart);
+        }
+    }
 
   return (
     <div className="flex flex-col itemce">
@@ -18,8 +34,8 @@ const Cart = () => {
                 <div className="flex flex-col gap-4">
                     {
                         cart.map(product => (
-                            <>
-                                <div key={uuid()}className="flex gap-24">
+                            <div key={uuid()}>
+                                <div className="flex gap-24">
                                     <img src={product.src} alt="PRODUCT" width={150} height={100} />
                                     <div className="flex flex-col gap-4">
                                         <div className="flex justify-between items-center">
@@ -32,13 +48,14 @@ const Cart = () => {
 
                                         <div className="flex gap-8 items-center">
                                             <i className='bx bx-heart text-2xl cursor-pointer' ></i>
-                                            <i className='bx bx-trash text-2xl cursor-pointer' ></i>
+                                            <i className='bx bx-trash text-2xl cursor-pointer' 
+                                            onClick={() => {removeFromCart(product.src)}}></i>
                                         </div>
 
                                     </div>
                                 </div>
                                 <hr className="h-[2px] bg-gray-400 w-[50%] mx-auto mt-2 mb-2" />
-                            </>
+                            </div>
                         ))
                     }
                 </div>
