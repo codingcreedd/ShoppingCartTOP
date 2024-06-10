@@ -1,5 +1,6 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { Link } from "react-router-dom";
+import { Context } from "./Context";
 
 const NewHover = ({onClick}) => {
     return (
@@ -16,6 +17,8 @@ const Nav = () => {
     const [newHover, setNewHover] = useState(false);
     const [tshirtHover, setTshirtHover] = useState(false);
     const [hats, setHats] = useState(false);
+
+    const {cart} = useContext(Context);
 
   return (
     <nav className="px-14 py-8 bg-white flex items-center justify-between text-xl font-bold relative">
@@ -40,8 +43,18 @@ const Nav = () => {
                 <i className='bx bx-search-alt-2'></i>
                 <input type="text" placeholder="Search" className="text-black ph bg-gray-400 outline-none w-full" />
             </div>
-            <i className='bx bx-heart text-3xl' ></i>
-            <i className='bx bxs-shopping-bag text-3xl' ></i>
+            <Link to="/favorites"><i className='bx bx-heart text-3xl cursor-pointer' ></i></Link>
+            <Link to="/cart">
+                <i className='bx bxs-shopping-bag text-3xl cursor-pointer relative' >
+                    {
+                        cart.length >= 1 ? (
+                            <div className="absolute bg-red-600 text-white w-[20px] h-[20px] rounded-full bottom-5 right-0 text-sm text-center">{cart.length}</div>
+                        ) : (
+                            null
+                        )
+                    }
+                </i>
+            </Link>
         </div>
 
         {

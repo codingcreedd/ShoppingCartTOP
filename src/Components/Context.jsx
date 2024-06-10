@@ -1,6 +1,6 @@
 import { createContext, useState } from "react"
 
-const Context = createContext(null);
+export const Context = createContext(null);
 
 const ContextProvider = (props) => {
 
@@ -9,7 +9,9 @@ const ContextProvider = (props) => {
     const [favourites, setFavourites] = useState([]);
 
     const states = {
-
+      cart, setCart,
+      cartTotal, setCartTotal,
+      favourites, setFavourites
     }
 
   return (

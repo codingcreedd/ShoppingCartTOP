@@ -1,5 +1,6 @@
 import products from "../assets/products"
 import ProductCard from "./ProductCard"
+import { v4 as uuid } from 'uuid';
 
 const TopProducts = ({classType, titleFound}) => {
   return (
@@ -10,7 +11,7 @@ const TopProducts = ({classType, titleFound}) => {
         <div className={`${classType || 'flex'} gap-4 mb-10 overflow-hidden`}>
             {
                 products.map(product => {
-                    return <ProductCard title={product.title} src={product.src} description={product.description} price={product.price} />
+                    return <ProductCard title={product.title} src={product.src} description={product.description} price={product.price} color={product.color} category={product.category} shop="palestineshop" key={uuid()} />
                 })
             }
         </div>

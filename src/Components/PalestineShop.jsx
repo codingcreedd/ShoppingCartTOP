@@ -22,11 +22,13 @@ const PalestineShop = () => {
                     }
                 </div>
 
-                <div className="flex items-center gap-4 text-lg relative cursor-pointer" onClick={() => {setShowSort(!showSort)}}>
-                    <div className="cursor-pointer relative">
-                        Sort By
+                <div className="flex items-center gap-4 text-lg relative cursor-pointer">
+                    <div className="flex items-center gap-4" onClick={() => {setShowSort(!showSort)}}>
+                        <div className="cursor-pointer relative">
+                            Sort By
+                        </div>
+                        {!showSort ? <i className='bx bx-chevron-down text-2xl' ></i> : <i class='bx bx-chevron-up text-2xl' ></i>}
                     </div>
-                    {!showSort ? <i className='bx bx-chevron-down text-2xl' ></i> : <i class='bx bx-chevron-up text-2xl' ></i>}
                     {
                         showSort ? (
                             <div className="text-xl absolute top-full mt-4 px-4 py-4 flex flex-col bg-gray-200 -left-full right-0 rounded-lg">
