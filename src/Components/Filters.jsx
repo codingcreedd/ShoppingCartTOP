@@ -33,7 +33,7 @@ const Element = ({name, children}) => {
         <div className="flex flex-col gap-6">
             <div className="flex items-center justify-between py-4 cursor-pointer" onClick={() => {setOpen(!open)}}>
                 <p className="text-lg font-bold">{name}</p>
-                <i className='bx bx-chevron-down'></i>
+                {!open ? <i className='bx bx-chevron-down text-2xl'></i> : <i class='bx bx-chevron-up text-2xl' ></i>}
             </div>
             {
                 open ? (

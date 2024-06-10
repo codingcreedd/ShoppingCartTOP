@@ -13,7 +13,7 @@ const Hero = () => {
           <p>This is not a real eCommerce website, its only a project for the odin project, but I 
             thought I could at least do something for palestine with my skills
           </p>
-          <button className="bg-green-600 text-white rounded-full px-6 py-4 max-w-max mt-8">Shop Now</button>
+          <Link className="bg-green-600 text-white rounded-full px-6 py-4 max-w-max mt-8" to="shop">Shop Now</Link>
       </div>
 
       <div className="flex flex-col">

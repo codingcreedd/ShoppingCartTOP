@@ -29,7 +29,7 @@ const Nav = () => {
         </Link>
 
         <div className="flex items-center gap-8">
-            <p className="cursor-pointer">Home</p>
+            <Link className="cursor-pointer" to="/">Home</Link>
             <p className="text-red-600 cursor-pointer" onMouseOver={() => {setNewHover(true)}} onMouseLeave={() => {setNewHover(false)}}>New & Featured</p>
             <p className="text-green-600 cursor-pointer" onMouseDown={() => {setTshirtHover(true)}} onMouseLeave={() => {setTshirtHover(false)}}>T-Shirts</p>
             <p className="cursor-pointer" onMouseDown={() => {setHats(true)}} onMouseLeave={() => {setHats(false)}}>Hats</p>
