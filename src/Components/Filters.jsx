@@ -31,8 +31,8 @@ const Element = ({name, children}) => {
 
     return (
         <div className="flex flex-col gap-6">
-            <div className="flex items-center justify-between py-4">
-                <p>{name}</p>
+            <div className="flex items-center justify-between py-4 cursor-pointer" onClick={() => {setOpen(!open)}}>
+                <p className="text-lg font-bold">{name}</p>
                 <i className='bx bx-chevron-down'></i>
             </div>
             {
@@ -48,17 +48,17 @@ const Element = ({name, children}) => {
 
 const Filters = () => {
   return (
-    <div className="flex flex-col flex-1">
+    <div className="flex flex-col flex-1 min-w-[15%]">
         {
             elements.map((element) => (
                 <div key={uuid()}>
                     <Element name={element.title} key={uuid()}>
                         <div className="flex flex-col">
-                            <div className="flex items-center gap-2">
+                            <div className="flex flex-col gap-2 text-xl">
                                 {
                                     element.children.map(child => (
-                                        <div key={uuid()} className="flex items-center gap-2">
-                                            <input type="check" />
+                                        <div key={uuid()} className="flex items-center gap-2 pb-4">
+                                            <input type="checkbox" className="text-2xl"/>
                                             <p>{child}</p>
                                         </div>
                                     ))

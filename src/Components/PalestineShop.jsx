@@ -2,6 +2,7 @@ import { useState } from "react"
 import Nav from "./Nav"
 import Filters from "./Filters";
 import Footer from "./Footer";
+import TopProducts from './TopProducts'
 
 const PalestineShop = () => {
 
@@ -32,6 +33,7 @@ const PalestineShop = () => {
                     <Filters />
                 ):(null)
             }
+            <TopProducts classType="grid grid-cols-3"/>
         </div>
         <Footer />
     </div>
