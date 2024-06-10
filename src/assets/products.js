@@ -7,6 +7,7 @@ const products = [
        category: ["men", "women"],
        color: "black",
        language: "english",
+       description: 'From the River to the Sea!',
        price: 12.99
     },
     {
@@ -15,6 +16,7 @@ const products = [
        category: ["men", "women"],
        color: "black",
        language: "arabic",
+       description: 'We are all Palestinians if we are humans',
        price: 14.99
     },
     {
@@ -23,14 +25,16 @@ const products = [
        category: ["men", "women"],
        color: "black",
        language: "english",
+       description: 'Its time to stop this and free Palestine',
        price: 0
     },
     {
-       title: "PS",
+       title: "PH",
        src: "https://i.ibb.co/RQGvc96/Palestinian-Heart.jpg",
        category: ["men", "women"],
        color: "black",
        language: "english",
+       description: 'Give all your heart to this conflict',
        price: 9.99
     }
 ];

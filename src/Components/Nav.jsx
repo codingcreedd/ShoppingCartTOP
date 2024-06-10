@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Link } from "react-router-dom";
 
 const NewHover = ({onClick}) => {
     return (
@@ -18,10 +19,14 @@ const Nav = () => {
 
   return (
     <nav className="px-14 py-8 bg-white flex items-center justify-between text-xl font-bold relative">
-        <em>P<span className="text-red-600">A</span>
-        <span className="text-gray-500">L</span>
-        <span className="text-green-600">E</span>
-        SWEAR</em>
+        <Link to="/">
+            <em>
+                P<span className="text-red-600">A</span>
+                <span className="text-gray-500">L</span>
+                <span className="text-green-600">E</span>
+                SWEAR
+            </em>
+        </Link>
 
         <div className="flex items-center gap-8">
             <p className="cursor-pointer">Home</p>

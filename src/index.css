@@ -17,7 +17,7 @@ body{
 
   font-family: "NIKEFONT";
 
-  src:  url('../public/fonts/Futura\ Std\ Extra\ Bold.ttf') format('truetype');
+  src:  url('/fonts/Futura\ Std\ Extra\ Bold.ttf') format('truetype');
 
   font-weight: normal;
 
